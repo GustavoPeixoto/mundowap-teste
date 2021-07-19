@@ -44,7 +44,24 @@ $routes = array(
 			'callback' 		=> 'validate', 
 			'method' 		=> 'POST'
 		]
-	)
+	),
+	'produtos' => array(
+		'get' => [
+			'controller' 	=> Controllers\ProdutosController::class, 
+			'callback' 		=> 'get', 
+			'method' 		=> 'GET'
+		],
+		'import' => [
+			'controller' 	=> Controllers\ProdutosController::class, 
+			'callback' 		=> 'import', 
+			'method' 		=> 'POST'
+		],
+		'delete' => [
+			'controller' 	=> Controllers\ProdutosController::class, 
+			'callback' 		=> 'delete', 
+			'method' 		=> 'DELETE'
+		]
+	),
 );
 
 $uri = Util::getURI();
