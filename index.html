@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<title>Nome da Aplicação</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+	<script src="assets/bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+	<script src="assets/bootstrap/js/popper.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+	<link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+	<link href="assets/fontawesome/css/brands.css" rel="stylesheet">
+	<link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+
+	<script type="module" src="pages/js/login.js"></script>
+
+	<link rel="stylesheet" href="pages/css/defaults.css"/>
+
+</head>
+<body class="default">
+
+	<div id="loading">Buscando...</div>
+
+	<div class="row h-100">
+		<div class="col-12 col-lg-8">
+			<div class="flex-container justify-content-center text-center">
+				<h4 class="mb-auto">Nome da aplicação</h4>
+			</div>
+		</div>
+		<div class="col-12 col-lg-4">
+
+			<form 
+				id="form-login" 
+				class="w-100 h-100"
+				data-url="auth/login" 
+				data-method="POST" 
+				data-contenttype="application/json">
+				<div class="flex-container">
+					<div class="w-100 mb-auto d-flex">
+						<button id="theme-switch" type="button" class="btn ml-auto">
+							<i class="fas fa-adjust"></i>
+						</button>
+					</div>
+
+					<div class="my-auto text-center">
+						<h2>LOGIN</h2>
+						<p>Entre com as suas credenciais abaixo ;)</p>
+					</div>
+
+					<div class="input-container">
+						<i class="fas fa-user"></i>
+						<input type="text" name="username" placeholder="Login" required />
+					</div>
+
+					<div class="input-container">
+						<i class="fas fa-key"></i>
+						<input type="password" name="password" placeholder="Senha" min="4" required />
+					</div>
+
+					<div class="input-container mb-auto">
+						<button type="submit" class="btn">Entrar</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

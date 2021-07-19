@@ -1,0 +1,32 @@
+div.navbar {
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+}
+
+body.dark div.navbar{
+	border-color: #EEF;
+}
+
+body.default div.navbar{
+	border-color: #001;
+}
+
+div.navbar > div[class*="col-"]{
+	/* d-flex */
+	display: -ms-flexbox !important;
+	display: flex !important;
+
+	/* flex-column  */
+	-ms-flex-direction: column !important;
+	flex-direction: column !important;
+
+	/* justify-content-center  */
+	-ms-flex-pack: center !important;
+	justify-content: center !important;
+
+	/* align-items-end  */
+	-ms-flex-align: end !important;
+	align-items: end !important;
+}

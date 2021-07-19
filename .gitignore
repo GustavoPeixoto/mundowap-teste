@@ -1,0 +1,4 @@
+/vendor
+settings.json
+composer.bat
+composer.lock
