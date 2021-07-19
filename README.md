@@ -23,6 +23,9 @@
 }</pre>
 	</li>
 	<li>
+		Execute o comando <pre>composer update</pre> para instalar as dependencias do projeto.
+	</li>
+	<li>
 		Após criar o banco de dados, execute o arquivo database.sql localizado no diretório raiz.
 	</li>
 	<li>
@@ -33,7 +36,7 @@
 }</pre>
 	</li>
 	<li>
-		As requisitos do teste e a planilha de exemplo se encontram na pasta requirements.
+		Os requisitos do teste e a planilha de exemplo se encontram na pasta requirements.
 	</li>
 </ul>
 
