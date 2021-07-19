@@ -26,7 +26,7 @@
 		Para instalar as dependencias do projeto execute o comando: <pre>composer update</pre>
 	</li>
 	<li>
-		Após criar o banco de dados, execute o arquivo database.sql localizado no diretório raiz.
+		Para criar o banco de dados execute o arquivo database.sql localizado no diretório raiz.
 	</li>
 	<li>
 		O banco de dados já possui um usuário de teste cadastrado.<br>

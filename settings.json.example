@@ -1,0 +1,12 @@
+{
+	"database": {
+		"host": "localhost",
+		"user": "root",
+		"password": "root",
+		"database": "mundowap_teste"
+	},
+	"jwt": {
+		"hours": 	12,
+		"secret": 	"SenhaDeAssinatura"
+	}
+}
