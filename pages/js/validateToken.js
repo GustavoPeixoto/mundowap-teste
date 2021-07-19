@@ -1,5 +1,5 @@
 import { request } 	from './request.js'
-import { exit } 	from './logout.js'
+import { Logout } 	from './logout.js'
 
 const validateToken = () => {
 	if (localStorage.getItem("token")) {
@@ -8,7 +8,7 @@ const validateToken = () => {
 			if (index === -1) window.location.href = "pages";
 		});
 	}
-	else exit();
+	else Logout.exit();
 }
 
 export { validateToken }

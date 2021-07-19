@@ -1,5 +1,5 @@
 import { Loading } from './loading.js'
-import { exit } from './logout.js'
+import { Logout } from './logout.js'
 
 const request = (url, method, params, callback, contenttype="application/json") => {
 	let baseurl = window.location.href.indexOf('pages') == -1 ? "api/" : "../api/";
@@ -9,8 +9,11 @@ const request = (url, method, params, callback, contenttype="application/json") 
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4) {
-			if (this.status == 401) exit();
-			else callback(JSON.parse(this.responseText), this);
+			if (this.status == 401) Logout.exit();
+			else {
+				try { callback(JSON.parse(this.responseText), this);
+				} catch(err) { console.error('Erro ao decodificar JSON\n', this.responseText, '\n', err); }
+			}
 
 			loading.close();
 		}
@@ -28,13 +31,22 @@ const request = (url, method, params, callback, contenttype="application/json") 
 	else payload = params;
 
 	xhttp.open(method, baseurl+url, true);
-	xhttp.setRequestHeader("Content-type", contenttype);
 	xhttp.setRequestHeader("Accept", "application/json");
+
 	let token = localStorage.getItem("token");
 	if (token) xhttp.setRequestHeader("Authorization", "Bearer "+token);
 
 	loading.open();
-	xhttp.send(JSON.stringify(payload));
+	if (contenttype == "multipart/form-data")  {
+		if (!(params instanceof HTMLElement) || params.tagName != "FORM") { 
+			loading.close(); console.error("The request parameter must be a form element"); return; 
+		}
+		xhttp.send(new FormData(params));
+	}
+	else {
+		xhttp.setRequestHeader("Content-type", contenttype);
+		xhttp.send(JSON.stringify(payload));
+	}
 }
 
 export { request }

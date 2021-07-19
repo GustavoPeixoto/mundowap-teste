@@ -1,0 +1,95 @@
+ul#errors{
+	color: #F00;
+	margin:  .5rem 0;
+}
+
+ul#errors li div {
+	margin: .5rem 0;
+
+	/* d-flex */
+	display: -ms-flexbox !important;
+	display: flex !important;
+}
+
+ul#errors li div span {
+	width: calc(100% - 50px - .25rem);
+}
+
+ul#errors li div button.btn {
+	border: none;
+	padding: 0;
+	margin-left:  auto;
+	width: 25px;
+	color:  #F00;
+	background-color: transparent;
+}
+
+body.default ul#errors li:nth-child(even) {
+	background-color: #CCC;
+}
+body.dark ul#errors li:nth-child(even) {
+	background-color: #111;
+}
+
+div.labels {
+	overflow-x: auto;
+	padding: 1rem 0;
+	margin: 1rem 0;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 96;
+}
+body.default div.labels {
+	background-color: #CCC;
+	border-color: #111;
+}
+body.dark div.labels {
+	background-color: #111;
+	border-color: #CCC;
+}
+
+div.labels>div[class*="col-"]:not(:last-child):after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 1px;
+}
+
+body.default div.labels>div[class*="col-"]:after {
+	background-color: #111;
+}
+
+body.dark div.labels>div[class*="col-"]:after {
+	background-color: #CCC;
+}
+
+body.default div#produtos div.produto:nth-child(even) {
+	background-color: #CCC;
+}
+body.dark div#produtos div.produto:nth-child(even) {
+	background-color: #111;
+}
+
+div.contents {
+	width: 100%;
+	overflow-x: auto;
+}
+div#produtos, div.labels, ul#errors {
+	min-width: 800px;
+}
+
+div#produtos div.produto {
+	padding: .5rem  0;
+}
+
+div#produtos div.produto button.delete {
+	border-color: #F00;
+}
+div#produtos div.produto button.delete:hover {
+	color: #F00;
+}

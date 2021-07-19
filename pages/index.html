@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>Nome da Aplicação</title>
+	<title>Mundo Wap - Teste</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,25 +20,63 @@
 
 	<link rel="stylesheet" href="./css/defaults.css"/>
 	<link rel="stylesheet" href="./css/navbar.css"/>
+	<link rel="stylesheet" href="./css/home.css"/>
 
 </head>
 <body class="default">
 
-	<div id="loading">Buscando...</div>
+	<div id="loading">Carregando...</div>
 
 	<div class="row navbar">
-		<div class="col-10"></div>
-		<div class="col-1">
+		<div class="col-12 col-md-10"></div>
+		<div class="col-6 col-md-1">
 			<button id="theme-switch" type="button" class="btn">
 				<i class="fas fa-adjust"></i>
 			</button>
 		</div>
-		<div class="col-1">
+		<div class="col-6 col-md-1">
 			<button id="logout" type="button" class="btn">
 				<i class="fas fa-sign-out-alt"></i>
 				Sair
 		</button>
 		</div>
+	</div>
+
+
+	<form 
+		id="form-sheet" 
+		class="w-100"
+		data-url="produtos/import" 
+		data-method="POST" 
+		data-contenttype="multipart/form-data"
+		enctype="multipart/form-data">
+			<div class="row">
+				<div class="col-12 col-md-4">
+					<div class="input-container">
+						<i class="fas fa-file"></i>
+						<input type="file" name="sheet" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required />
+					</div>
+				</div>
+				<div class="col-12 col-md-2">
+					<div class="input-container mb-auto">
+						<button type="submit" class="btn">Enviar</button>
+					</div>
+				</div>
+			</div>
+	</form>
+
+	<div class="contents">
+		<ul id="errors"></ul>
+
+		<div class="row labels">
+			<div class="col-2">EAN</div>
+			<div class="col-3">NOME</div>
+			<div class="col-2">PREÇO</div>
+			<div class="col-2">ESTOQUE</div>
+			<div class="col-2">FABRICAÇÃO</div>
+			<div class="col-1"></div>
+		</div>
+		<div id="produtos"></div>
 	</div>
 
 </body>
